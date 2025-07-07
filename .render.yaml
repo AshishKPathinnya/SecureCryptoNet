@@ -1,0 +1,9 @@
+services: 
+  - type: web 
+    name: securecryptonet 
+    env: node 
+    buildCommand: npm install 
+    startCommand: npx tsx server/index.ts 
+    rootDir: . 
+    autoDeploy: true 
+    branch: main

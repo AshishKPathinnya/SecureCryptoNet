@@ -23,7 +23,7 @@ A blockchain and cryptography communication system that enables users to send en
 
 ## Prerequisites
 
-- Node.js 18+ (or Node.js 20+ recommended)
+- Node.js 18+ (or Node.js v 20.19.3 recommended otherwise port issue comes on windows)
 - npm or yarn package manager
 - Modern web browser with Web Crypto API support
 
@@ -45,7 +45,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:5000`    or http://127.0.0.1:5000/
 
 ## Windows-Specific Setup
 
@@ -61,7 +61,7 @@ cd path\to\securechain-messenger
 npm install
 
 # Start the application
-npm run dev
+npm run dev   or try:   set NODE_ENV=development&& npx tsx server/index.ts
 ```
 
 ### Option 2: Using PowerShell
