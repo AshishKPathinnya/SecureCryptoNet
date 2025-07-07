@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { cryptoService } from "@/lib/crypto";
+import AddUserDialog from "@/components/AddUserDialog";
 import type { User, InsertMessage } from "@shared/schema";
 
 const messageSchema = z.object({
@@ -124,9 +125,9 @@ export default function MessageComposer() {
 
   return (
     <div className="lg:col-span-2">
-      <Card className="bg-crypto-gray rounded-xl border border-crypto-blue/20 crypto-glow">
+      <Card className="bg-crypto-gray dark:bg-crypto-gray light:bg-white rounded-xl border border-crypto-blue/20 crypto-glow">
         <CardHeader>
-          <CardTitle className="flex items-center text-xl">
+          <CardTitle className="flex items-center text-xl text-white dark:text-white light:text-gray-900">
             <Edit className="mr-2 text-crypto-accent" size={20} />
             Compose Encrypted Message
           </CardTitle>
@@ -140,32 +141,26 @@ export default function MessageComposer() {
                 name="toUserId"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Recipient</FormLabel>
+                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Recipient</FormLabel>
                     <div className="flex items-center space-x-2">
                       <FormControl>
                         <Select 
                           value={field.value.toString()} 
                           onValueChange={(value) => field.onChange(parseInt(value))}
                         >
-                          <SelectTrigger className="flex-1 bg-crypto-dark border-crypto-blue/30">
+                          <SelectTrigger className="flex-1 bg-crypto-dark dark:bg-crypto-dark border-crypto-blue/30 text-white dark:text-white">
                             <SelectValue placeholder="Select recipient..." />
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className="bg-crypto-dark dark:bg-crypto-dark border-crypto-blue/30">
                             {users.map((user) => (
-                              <SelectItem key={user.id} value={user.id.toString()}>
+                              <SelectItem key={user.id} value={user.id.toString()} className="text-white dark:text-white hover:bg-crypto-blue/20">
                                 {user.username} ({user.address.slice(0, 6)}...{user.address.slice(-4)})
                               </SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
                       </FormControl>
-                      <Button
-                        type="button"
-                        size="sm"
-                        className="bg-crypto-green hover:bg-green-600"
-                      >
-                        <Plus size={16} />
-                      </Button>
+                      <AddUserDialog />
                     </div>
                     <FormMessage />
                   </FormItem>
@@ -178,12 +173,12 @@ export default function MessageComposer() {
                 name="content"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         {...field}
                         placeholder="Enter your message here..."
-                        className="bg-crypto-dark border-crypto-blue/30 resize-none"
+                        className="bg-crypto-dark dark:bg-crypto-dark light:bg-gray-50 border-crypto-blue/30 resize-none text-white dark:text-white light:text-gray-900"
                         rows={4}
                       />
                     </FormControl>
@@ -198,7 +193,7 @@ export default function MessageComposer() {
                 name="encryptionMethod"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Encryption Method</FormLabel>
+                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Encryption Method</FormLabel>
                     <FormControl>
                       <RadioGroup
                         value={field.value}

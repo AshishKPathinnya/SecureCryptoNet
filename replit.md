@@ -99,6 +99,10 @@ SecureChain Messenger is a full-stack web application that combines blockchain t
 ```
 Changelog:
 - July 07, 2025. Initial setup
+- July 07, 2025. Added dark/light mode theme toggle functionality
+- July 07, 2025. Implemented user-defined recipients with Add User dialog
+- July 07, 2025. Fixed background visibility issues and improved contrast
+- July 07, 2025. Enhanced UI with proper theme support across all components
 ```
 
 ## User Preferences
