@@ -110,6 +110,9 @@ export class MemStorage implements IStorage {
       ...insertMessage,
       id: this.currentMessageId++,
       timestamp: new Date(),
+      status: insertMessage.status || "pending",
+      encryptionMethod: insertMessage.encryptionMethod || "AES-256-GCM",
+      blockId: insertMessage.blockId || null,
     };
     this.messages.set(message.id, message);
     return message;
@@ -154,6 +157,9 @@ export class MemStorage implements IStorage {
       id: this.currentBlockId++,
       height: ++this.currentBlockHeight,
       timestamp: new Date(),
+      nonce: insertBlock.nonce || 0,
+      previousHash: insertBlock.previousHash || null,
+      messageCount: insertBlock.messageCount || 0,
     };
     this.blocks.set(block.id, block);
     return block;
