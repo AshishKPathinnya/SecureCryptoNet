@@ -14,7 +14,7 @@ Or use PowerShell:
 $env:NODE_ENV="development"; npx tsx server/index.ts
 ```
 
-**Note**: The server automatically detects Windows and uses `localhost` instead of `0.0.0.0` for better compatibility.
+**Note**: The server automatically detects Windows and uses `127.0.0.1` (IPv4) instead of `0.0.0.0` or `::1` for better compatibility.
 
 ### Build for Production (Windows)
 ```cmd

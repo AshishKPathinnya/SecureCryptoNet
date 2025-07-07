@@ -97,8 +97,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 2. Kill the process or use a different port
 
 ### Issue 5: ENOTSUP: operation not supported on socket
-**Problem**: Windows doesn't support binding to 0.0.0.0
-**Solution**: The server now automatically detects Windows and uses localhost instead
+**Problem**: Windows doesn't support binding to 0.0.0.0 or ::1 (IPv6)
+**Solution**: The server now automatically detects Windows and uses 127.0.0.1 (IPv4 only) instead
 
 ### Issue 6: Permission denied errors
 **Problem**: Insufficient permissions

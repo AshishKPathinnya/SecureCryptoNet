@@ -1,10 +1,13 @@
 # Windows Compatibility Fix Applied
 
 ## Issue Resolved
-The `ENOTSUP: operation not supported on socket 0.0.0.0:5000` error has been fixed!
+The `ENOTSUP: operation not supported on socket ::1:5000` error has been fixed!
 
 ## What Was Changed
-The server now automatically detects Windows and uses `localhost` instead of `0.0.0.0` for better compatibility.
+The server now automatically detects Windows and uses `127.0.0.1` (IPv4 only) instead of `0.0.0.0` or `::1` for better compatibility.
+
+## Additional Fix
+Added `ipv6Only: false` to force IPv4 binding on Windows systems.
 
 ## Try Again
 Now that the fix is applied, try running the application again:
@@ -32,7 +35,7 @@ $env:NODE_ENV="development"; npx tsx server/index.ts
 ## Expected Output
 You should now see:
 ```
-serving on port 5000 (host: localhost)
+serving on port 5000 (host: 127.0.0.1)
 ```
 
 ## Access the Application
