@@ -5,7 +5,7 @@ This guide will help you set up and run SecureChain Messenger on Windows.
 ## Prerequisites
 
 1. **Install Node.js** (Required)
-   - Download from: https://nodejs.org/
+   - Download from: https://nodejs.org/   (Node.js v 20.19.3 recommended otherwise port issue comes on windows)
    - Choose the LTS (Long Term Support) version
    - The installer will automatically add Node.js and npm to your PATH
 
