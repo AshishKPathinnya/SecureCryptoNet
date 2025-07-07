@@ -25,7 +25,39 @@ A blockchain and cryptography communication system that enables users to send en
 - **Real-time Updates**: Live blockchain log and message history with automatic refresh
 - **Security Dashboard**: Monitor encryption statistics and network security metrics
 - **Dark/Light Mode**: Toggle between themes with full UI support
-- **Mining Simulation**: Mine blocks to verify pending messages
+- **Mining Simulation**: Mine blocks to verify pending messages.
+- 
+## Data Flow
+1. **User Registration**: Generate cryptographic key pairs, store user data
+2. **Message Creation**: 
+   - User composes message
+   - Message is encrypted using chosen method
+   - Message hash is generated for integrity
+   - Message is stored with pending status
+3. **Block Mining**: 
+   - Pending messages are collected
+   - New block is created with message data
+   - Block hash is computed and verified
+   - Messages are marked as verified
+4. **Message Verification**: 
+   - Hash verification ensures message integrity
+   - Blockchain structure provides tamper evidence
+
+## External Dependencies
+
+### Core Dependencies
+- **@neondatabase/serverless**: Database connection for serverless deployment
+- **@radix-ui/***: Accessible component primitives
+- **@tanstack/react-query**: Server state management
+- **drizzle-orm**: Type-safe database operations
+- **react-hook-form**: Form state management
+- **zod**: Runtime type validation
+
+### Development Tools
+- **Vite**: Fast build tool and development server
+- **TypeScript**: Type safety across the application
+- **Tailwind CSS**: Utility-first CSS framework
+- **ESBuild**: Fast JavaScript bundler for production
 
 ## Tech Stack
 
