@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom crypto theme colors */
+  --crypto-blue: hsl(215, 83%, 38%);
+  --crypto-green: hsl(158, 64%, 52%);
+  --crypto-accent: hsl(213, 78%, 61%);
+  --crypto-dark: hsl(222, 47%, 11%);
+  --crypto-gray: hsl(215, 16%, 21%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(135deg, var(--crypto-dark) 0%, hsl(217, 33%, 17%) 100%);
+  }
+}
+
+@layer utilities {
+  .crypto-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .blockchain-block {
+    background: linear-gradient(135deg, var(--crypto-blue) 0%, var(--crypto-accent) 100%);
+  }
+  
+  .encrypted-text {
+    background: linear-gradient(90deg, var(--crypto-green) 0%, hsl(158, 64%, 62%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-crypto-blue {
+    background-color: var(--crypto-blue);
+  }
+  
+  .bg-crypto-green {
+    background-color: var(--crypto-green);
+  }
+  
+  .bg-crypto-accent {
+    background-color: var(--crypto-accent);
+  }
+  
+  .bg-crypto-dark {
+    background-color: var(--crypto-dark);
+  }
+  
+  .bg-crypto-gray {
+    background-color: var(--crypto-gray);
+  }
+  
+  .text-crypto-blue {
+    color: var(--crypto-blue);
+  }
+  
+  .text-crypto-green {
+    color: var(--crypto-green);
+  }
+  
+  .text-crypto-accent {
+    color: var(--crypto-accent);
+  }
+  
+  .text-crypto-dark {
+    color: var(--crypto-dark);
+  }
+  
+  .text-crypto-gray {
+    color: var(--crypto-gray);
+  }
+  
+  .border-crypto-blue {
+    border-color: var(--crypto-blue);
+  }
+  
+  .border-crypto-green {
+    border-color: var(--crypto-green);
+  }
+  
+  .border-crypto-accent {
+    border-color: var(--crypto-accent);
+  }
+  
+  .border-crypto-dark {
+    border-color: var(--crypto-dark);
+  }
+  
+  .border-crypto-gray {
+    border-color: var(--crypto-gray);
+  }
+}
