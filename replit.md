@@ -103,6 +103,7 @@ Changelog:
 - July 07, 2025. Implemented user-defined recipients with Add User dialog
 - July 07, 2025. Fixed background visibility issues and improved contrast
 - July 07, 2025. Enhanced UI with proper theme support across all components
+- July 07, 2025. Updated background to white for light mode instead of grey
 ```
 
 ## User Preferences

@@ -53,12 +53,12 @@ export default function SecurityDashboard() {
         {securityCards.map((card, index) => (
           <Card
             key={index}
-            className="bg-crypto-gray border-crypto-blue/20 crypto-glow"
+            className="bg-white dark:bg-crypto-gray border-gray-200 dark:border-crypto-blue/20 crypto-glow"
           >
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-400">{card.title}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{card.title}</p>
                   <p className={`text-2xl font-bold ${card.textColor}`}>
                     {typeof card.value === "number" ? card.value.toLocaleString() : card.value}
                   </p>

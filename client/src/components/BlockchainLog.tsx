@@ -64,10 +64,10 @@ export default function BlockchainLog() {
 
   return (
     <div className="lg:col-span-1">
-      <Card className="bg-crypto-gray border-crypto-blue/20 crypto-glow">
+      <Card className="bg-white dark:bg-crypto-gray border-gray-200 dark:border-crypto-blue/20 crypto-glow">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="flex items-center text-xl">
+            <CardTitle className="flex items-center text-xl text-gray-900 dark:text-white">
               <Group className="mr-2 text-crypto-green" size={20} />
               Blockchain Log
             </CardTitle>

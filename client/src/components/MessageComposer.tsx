@@ -125,9 +125,9 @@ export default function MessageComposer() {
 
   return (
     <div className="lg:col-span-2">
-      <Card className="bg-crypto-gray dark:bg-crypto-gray light:bg-white rounded-xl border border-crypto-blue/20 crypto-glow">
+      <Card className="bg-white dark:bg-crypto-gray rounded-xl border border-gray-200 dark:border-crypto-blue/20 crypto-glow">
         <CardHeader>
-          <CardTitle className="flex items-center text-xl text-white dark:text-white light:text-gray-900">
+          <CardTitle className="flex items-center text-xl text-gray-900 dark:text-white">
             <Edit className="mr-2 text-crypto-accent" size={20} />
             Compose Encrypted Message
           </CardTitle>
@@ -141,19 +141,19 @@ export default function MessageComposer() {
                 name="toUserId"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Recipient</FormLabel>
+                    <FormLabel className="text-gray-700 dark:text-gray-200">Recipient</FormLabel>
                     <div className="flex items-center space-x-2">
                       <FormControl>
                         <Select 
                           value={field.value.toString()} 
                           onValueChange={(value) => field.onChange(parseInt(value))}
                         >
-                          <SelectTrigger className="flex-1 bg-crypto-dark dark:bg-crypto-dark border-crypto-blue/30 text-white dark:text-white">
+                          <SelectTrigger className="flex-1 bg-gray-50 dark:bg-crypto-dark border-gray-300 dark:border-crypto-blue/30 text-gray-900 dark:text-white">
                             <SelectValue placeholder="Select recipient..." />
                           </SelectTrigger>
-                          <SelectContent className="bg-crypto-dark dark:bg-crypto-dark border-crypto-blue/30">
+                          <SelectContent className="bg-white dark:bg-crypto-dark border-gray-300 dark:border-crypto-blue/30">
                             {users.map((user) => (
-                              <SelectItem key={user.id} value={user.id.toString()} className="text-white dark:text-white hover:bg-crypto-blue/20">
+                              <SelectItem key={user.id} value={user.id.toString()} className="text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-crypto-blue/20">
                                 {user.username} ({user.address.slice(0, 6)}...{user.address.slice(-4)})
                               </SelectItem>
                             ))}
@@ -173,12 +173,12 @@ export default function MessageComposer() {
                 name="content"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Message</FormLabel>
+                    <FormLabel className="text-gray-700 dark:text-gray-200">Message</FormLabel>
                     <FormControl>
                       <Textarea
                         {...field}
                         placeholder="Enter your message here..."
-                        className="bg-crypto-dark dark:bg-crypto-dark light:bg-gray-50 border-crypto-blue/30 resize-none text-white dark:text-white light:text-gray-900"
+                        className="bg-gray-50 dark:bg-crypto-dark border-gray-300 dark:border-crypto-blue/30 resize-none text-gray-900 dark:text-white"
                         rows={4}
                       />
                     </FormControl>
@@ -193,7 +193,7 @@ export default function MessageComposer() {
                 name="encryptionMethod"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-gray-200 dark:text-gray-200 light:text-gray-700">Encryption Method</FormLabel>
+                    <FormLabel className="text-gray-700 dark:text-gray-200">Encryption Method</FormLabel>
                     <FormControl>
                       <RadioGroup
                         value={field.value}

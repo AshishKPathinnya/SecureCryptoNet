@@ -52,10 +52,10 @@ export default function MessageHistory() {
 
   return (
     <div className="mt-8">
-      <Card className="bg-crypto-gray border-crypto-blue/20 crypto-glow">
+      <Card className="bg-white dark:bg-crypto-gray border-gray-200 dark:border-crypto-blue/20 crypto-glow">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="flex items-center text-xl">
+            <CardTitle className="flex items-center text-xl text-gray-900 dark:text-white">
               <History className="mr-2 text-crypto-accent" size={20} />
               Message History
             </CardTitle>
@@ -74,8 +74,8 @@ export default function MessageHistory() {
             <div className="space-y-4">
               {messages.length === 0 ? (
                 <div className="text-center py-8">
-                  <div className="text-gray-400 mb-2">No messages found</div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-gray-600 dark:text-gray-400 mb-2">No messages found</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-500">
                     Start by sending your first encrypted message
                   </div>
                 </div>
