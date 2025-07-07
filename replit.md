@@ -105,6 +105,7 @@ Changelog:
 - July 07, 2025. Enhanced UI with proper theme support across all components
 - July 07, 2025. Updated background to white for light mode instead of grey
 - July 07, 2025. Added Windows compatibility with setup scripts and comprehensive documentation
+- July 07, 2025. Fixed Windows ENOTSUP socket error by auto-detecting platform and using localhost
 ```
 
 ## User Preferences

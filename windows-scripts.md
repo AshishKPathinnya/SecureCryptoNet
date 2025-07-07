@@ -14,6 +14,8 @@ Or use PowerShell:
 $env:NODE_ENV="development"; npx tsx server/index.ts
 ```
 
+**Note**: The server automatically detects Windows and uses `localhost` instead of `0.0.0.0` for better compatibility.
+
 ### Build for Production (Windows)
 ```cmd
 npm run build

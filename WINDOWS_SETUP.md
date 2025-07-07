@@ -96,13 +96,17 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 1. Find what's using the port: `netstat -ano | findstr :5000`
 2. Kill the process or use a different port
 
-### Issue 5: Permission denied errors
+### Issue 5: ENOTSUP: operation not supported on socket
+**Problem**: Windows doesn't support binding to 0.0.0.0
+**Solution**: The server now automatically detects Windows and uses localhost instead
+
+### Issue 6: Permission denied errors
 **Problem**: Insufficient permissions
 **Solution**: 
 1. Run terminal as Administrator
 2. Or change to a directory you have write access to
 
-### Issue 6: Build fails with long path names
+### Issue 7: Build fails with long path names
 **Problem**: Windows path length limitation
 **Solution**: 
 1. Move project closer to root (e.g., `C:\projects\`)
