@@ -104,10 +104,13 @@ Changelog:
 - July 07, 2025. Fixed background visibility issues and improved contrast
 - July 07, 2025. Enhanced UI with proper theme support across all components
 - July 07, 2025. Updated background to white for light mode instead of grey
+- July 07, 2025. Added Windows compatibility with setup scripts and comprehensive documentation
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Target platforms: Windows compatibility required.
+Setup requirements: Easy installation with batch files and clear documentation.
 ```
