@@ -1,4 +1,4 @@
-# SecureChain Messenger
+# SecureCryptoNet Messenger
 
 ## Overview
 
